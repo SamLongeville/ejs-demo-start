@@ -9,6 +9,9 @@ const helpers = {
             ${inp}
         </span>`;
   },
+  emojify: function (inp, className) {
+    return `<span class="${className}">💛 ${inp}</span>`;
+  },
 };
 
 export default helpers;
