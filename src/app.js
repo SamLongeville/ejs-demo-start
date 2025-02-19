@@ -3,6 +3,7 @@ import express from "express";
 import expressLayouts from "express-ejs-layouts";
 import path from "path";
 import { home, about, contact, privacy } from "./controllers/PageController.js";
+import * as dinos from "./controllers/DinoController.js";
 
 // create an instance of express
 const app = express();
@@ -23,6 +24,8 @@ app.get("/", home);
 app.get("/about", about);
 app.get("/contact", contact);
 app.get("/privacy", privacy);
+app.get("/dinosaurs", dinos.index);
+app.get("/dinosaurs/:slug", dinos.detail);
 
 // 404 page
 app.get("*", (req, res) => {
