@@ -2,7 +2,7 @@
 import express from "express";
 import expressLayouts from "express-ejs-layouts";
 import path from "path";
-import { home, about, contact, privacy } from "./controllers/PageController.js";
+import * as pages from "./controllers/PageController.js";
 import * as dinos from "./controllers/DinoController.js";
 
 import helpers from "./utils/templateHelpers.js";
@@ -25,10 +25,10 @@ Object.assign(app.locals, helpers);
 app.use(express.static("public"));
 
 // page routes
-app.get("/", home);
-app.get("/about", about);
-app.get("/contact", contact);
-app.get("/privacy", privacy);
+app.get("/", pages.home);
+app.get("/about", pages.about);
+app.get("/contact", pages.contact);
+app.get("/privacy", pages.privacy);
 app.get("/dinosaurs", dinos.index);
 app.get("/dinosaurs/:slug", dinos.detail);
 
