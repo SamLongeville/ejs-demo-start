@@ -4,7 +4,8 @@ const helpers = {
     return upper;
   },
   highlight: function (inp) {
-    return `🦖 <span style="background-color: yellow;">
+    return `🦖 <span
+    style="background-color: yellow;">
             ${inp}
         </span>`;
   },
