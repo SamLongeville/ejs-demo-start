@@ -3,6 +3,11 @@ const helpers = {
     const upper = inp.toUpperCase();
     return upper;
   },
+  highlight: function (inp) {
+    return `🦖 <span style="background-color: yellow;">
+            ${inp}
+        </span>`;
+  },
 };
 
 export default helpers;
